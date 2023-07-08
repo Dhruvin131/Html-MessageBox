@@ -1,0 +1,18 @@
+<input type="file" id="file-input" multiple>
+<ul id="file-list"></ul>
+
+<script>
+function getFileList() {
+  const fileList = document.getElementById("file-list");
+  fileList.innerHTML = "";
+
+  const files = document.getElementById("file-input").files;
+  for (let i = 0; i < files.length; i++) {
+    const li = document.createElement("li");
+    li.innerText = files[i].name;
+    fileList.appendChild(li);
+  }
+}
+
+document.getElementById("file-input").addEventListener("change", getFileList);
+</script>
